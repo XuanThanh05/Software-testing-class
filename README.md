@@ -23,6 +23,7 @@ Các điểm không hợp lệ (<0 hoặc >10) sẽ bị bỏ qua.
 - Visual Code IDE
 
 ## Cấu trúc thư mục
+```
 unit_test/
 ├── src/
 │ └── main/java/com/mycompany/unit_test
@@ -31,6 +32,7 @@ unit_test/
 │     └── StudentAnalyzerTest.java
 ├── pom.xml
 └── README.md
+```
 
 ## Cách chạy kiểm thử đơn vị
 vào đúng file ...\Software-testing-class\unit_test>
