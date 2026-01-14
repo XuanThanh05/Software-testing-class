@@ -36,3 +36,76 @@ unit_test/
 
 #### 5. Cách chạy kiểm thử đơn vị
 Vào đúng thư mục ...\Software-testing-class\unit_test> trong terminal nhập: mvn test
+
+## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
+#### 1. Mục tiêu
+
+Thực hành kiểm thử tự động End-to-End (E2E) cho website https://www.saucedemo.com
+ bằng công cụ Cypress, nhằm kiểm tra các chức năng cơ bản như đăng nhập, giỏ hàng và thanh toán.
+
+#### 2. Công cụ và môi trường
+
+Node.js (phiên bản 14 trở lên)
+
+Visual Studio Code
+
+Cypress
+
+Website kiểm thử: https://www.saucedemo.com
+
+#### 3. Cài đặt Cypress
+
+Thực hiện các lệnh sau trong terminal:
+```
+mkdir cypress-exercise
+cd cypress-exercise
+npm init -y
+npm install cypress --save-dev
+npx cypress open
+```
+#### 4. Cấu trúc thư mục
+```
+cypress-exercise/
+├── cypress/
+│   ├── e2e/
+│   │   ├── login_spec.cy.js
+│   │   ├── cart_spec.cy.js
+│   │   └── checkout_spec.cy.js
+│   ├── fixtures/
+│   └── support/
+├── node_modules/
+├── cypress.config.js
+├── package.json
+└── README.md
+```
+#### 5. Các kịch bản kiểm thử
+
+Kiểm tra đăng nhập thành công
+
+Kiểm tra đăng nhập thất bại
+
+Kiểm tra thêm và xóa sản phẩm khỏi giỏ hàng
+
+Kiểm tra sắp xếp sản phẩm theo giá (thấp → cao)
+
+Kiểm tra quy trình thanh toán (Checkout)
+
+#### 6. Cách thực hiện
+Tạo và cài đặt cypress ở phía trên, tạo thêm 3 file mới "login_spec.cy.js", "cart_spec.cy.js", "checkout_spec.cy.js"
+```
+cypress-exercise/
+├── cypress/
+│   ├── e2e/
+│   │   ├── login_spec.cy.js
+│   │   ├── cart_spec.cy.js
+│   │   └── checkout_spec.cy.js
+```
+Trong terminal nhập 
+```
+npx cypress open
+```
+Chọn trình duyệt
+
+Ấn vào 1 trong 3 file để bắt đầu kiểm thử trang website
+
+Nhận kết quả
