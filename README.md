@@ -105,7 +105,13 @@ Trong terminal nhập
 npx cypress open
 ```
 Chọn trình duyệt
+<img width="1919" height="565" alt="Screenshot 2026-01-14 134110" src="https://github.com/user-attachments/assets/4fea3a1a-b6fc-4677-855c-b367d634bf78" />
 
 Ấn vào 1 trong 3 file để bắt đầu kiểm thử trang website
+<img width="1879" height="585" alt="Screenshot 2026-01-14 134222" src="https://github.com/user-attachments/assets/a89be932-8456-40a2-ada6-93186e3fefba" />
 
-Nhận kết quả
+#### 7. Kết quả
+<img width="1919" height="1032" alt="Screenshot 2026-01-14 124734" src="https://github.com/user-attachments/assets/4b324e22-4481-4a90-bdbc-a2771228c05f" />
+<img width="1919" height="1037" alt="Screenshot 2026-01-14 131305" src="https://github.com/user-attachments/assets/a72c16d2-b4ec-45cb-b5bd-00bf26554f08" />
+<img width="1914" height="1030" alt="Screenshot 2026-01-14 131407" src="https://github.com/user-attachments/assets/9444aca3-c8aa-4e2a-8de4-67c59f625c11" />
+
