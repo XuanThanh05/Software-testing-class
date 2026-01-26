@@ -97,6 +97,7 @@ Với countExcellentStudents:
 | `score == null`  | ✅          | ✅        | Đủ       |  
 | `score < 0`      | ✅          | ✅        | Đủ       |  
 | `score >= 8`     | ✅          | ✅        | Đủ       | 
+
 Với calculateValidAverage:
 | Điều kiện          | TRUE | FALSE | Có test? |
 | ------------------ | ---- | ----- | -------- |
