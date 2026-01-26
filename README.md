@@ -36,7 +36,7 @@ unit_test/
 
 #### 5. Cách chạy kiểm thử đơn vị
 Vào đúng thư mục ...\Software-testing-class\unit_test> trong terminal nhập: mvn test
-#### 6. Các phương pháp kiểm thử
+#### 6. Các phương pháp kiểm thử hộp đen
 ##### 6.1 LỚP TƯƠNG ĐƯƠNG
 Các lớp tương đương cần có
 -) Với danh sách
@@ -59,7 +59,7 @@ Biên phân loại xuất sắc: 8.0
 ```
 0.0	✅
 10.0	✅
-8.0 (tại biên)	✅
+8.0 (tại biên)	❌
 sát biên dưới 8.0	✅ (7.9)
 sát biên trên 8.0	✅ (8.1)
 ```
@@ -74,6 +74,43 @@ R6 (8–10)	✅	Đã có
 R7 (>10)	✅	Đã có
 R8 (không điểm hợp lệ)	✅	Đã có
 ```
+#### 7. Các phương pháp kiểm thử hộp trắng
+##### 7.1 Kiểm thử hộp trắng theo Statement Coverage
+Mục tiêu: Mỗi câu lệnh trong chương trình phải được thực thi ít nhất một lần
+```
+| Câu lệnh               | Được thực thi? | Test nào                               |
+| ---------------------- | -------------- | -------------------------------------- |
+| `scores == null`       | ✅              | `testNullList`                         |
+| `scores.isEmpty()`     | ✅              | `testCountExcellentStudents_EmptyList` |
+| `score == null`        | ✅              | `testListWithNullElement`              |
+| `score < 0`            | ✅              | `-1.0`                                 |
+| `score > 10`           | ✅              | `11.0`, `10.1`                         |
+| `score >= 8`           | ✅              | `8.1`, `9.0`, `10.0`                   |
+| `count == 0`           | ✅              | `testNoValidScoresForAverage`          |
+```
+##### 7.2 Kiểm thử hộp trắng theo Branch Coverage
+| Điều kiện        | Nhánh TRUE | Nhánh FALSE | Có test? |   |    |
+| ---------------- | ---------- | ----------- | -------- | - | -- |
+| `scores == null` | ✅          | ✅           | Đủ       |   |    |
+| `score == null`  | ✅          | ✅           | Đủ       |   |    |
+| `score < 0`      | ✅          | ✅           | Đủ       |   |    |
+| `score >= 8`     | ✅          | ✅           | Đủ       |   |    |
+
+##### 7.3 Đánh giá theo Cyclomatic Complexity
+-) Công thức
+M = số quyết định + 1
+```
+countExcellentStudents:
+if scores == null → 1
+if score == null → 1
+if score < 0 || score > 10 → 1
+if score >= 8 → 1
+```
+`
+👉 M = 5
+➡️ Cần ít nhất 5 test case độc lập, hiện tại: > 5 test → đạt.
+`
+
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
 
