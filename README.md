@@ -155,15 +155,6 @@ if (score.isNaN()) continue;
 Gợi ý: Nếu Infinity thì tiếp tục
 if (score.isInfinite()) continue;
 ```
-##### 8.3 Không kiểm tra giá trị "phi thực tế" ❌
-Ví dụ:
-```
-score = 9.99999999999999
-```
-Gợi ý: Làm tròn trước khi xử lýs: 
-```
-core = Math.round(score * 10) / 10.0;
-```
 
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
