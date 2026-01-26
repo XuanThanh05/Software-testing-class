@@ -89,13 +89,25 @@ Mục tiêu: Mỗi câu lệnh trong chương trình phải được thực thi 
 | `count == 0`           | ✅              | `testNoValidScoresForAverage`          |
 ```
 ##### 7.2 Kiểm thử hộp trắng theo Branch Coverage
-| Điều kiện        | Nhánh TRUE | Nhánh FALSE | Có test? |   |    |
-| ---------------- | ---------- | ----------- | -------- | - | -- |
-| `scores == null` | ✅          | ✅           | Đủ       |   |    |
-| `score == null`  | ✅          | ✅           | Đủ       |   |    |
-| `score < 0`      | ✅          | ✅           | Đủ       |   |    |
-| `score >= 8`     | ✅          | ✅           | Đủ       |   |    |
+Với countExcellentStudents: 
+| Điều kiện        | Nhánh TRUE | Nhánh FALSE | Có test? | 
+| ---------------- | ---------- | ----------- | -------- | 
+| `scores == null` | ✅          | ✅        | Đủ       | 
+| `score == null`  | ✅          | ✅        | Đủ       |  
+| `score < 0`      | ✅          | ✅        | Đủ       |  
+| `score >= 8`     | ✅          | ✅        | Đủ       | 
+Với calculateValidAverage:
+| Điều kiện          | TRUE | FALSE | Có test? |
+| ------------------ | ---- | ----- | -------- |
+| `scores == null`   | ✅   | ✅   | Đủ       |
+| `scores.isEmpty()` | ✅   | ❌   | ❌       |
+| `count == 0`       | ✅   | ✅   | Đủ       |
 
+`
+📌 Thiếu nhẹ: chưa có test list không rỗng nhưng không null để đi nhánh scores.isEmpty() == false
+👉 Nhưng trên thực tế test NormalList đã cover nhánh này
+➡️ Branch coverage vẫn đạt
+`
 ##### 7.3 Đánh giá theo Cyclomatic Complexity
 -) Công thức
 M = số quyết định + 1
@@ -110,6 +122,25 @@ if score >= 8 → 1
 👉 M = 5
 ➡️ Cần ít nhất 5 test case độc lập, hiện tại: > 5 test → đạt.
 `
+##### 7.4 Kiểm thử hộp trắng theo Path Coverage
+Các path chính của hàm countExcellentStudents:
+| Path | Mô tả                      | Test                      |
+| ---- | -------------------------- | ------------------------- |
+| P1   | List null → return         | `testNullList`            |
+| P2   | List rỗng → return 0       | `testEmptyList`           |
+| P3   | Score null → continue      | `testListWithNullElement` |
+| P4   | Score < 0 / >10 → continue | `NormalList     `         |
+| P5   | Score hợp lệ < 8           | `7.9`, `7.5`              |
+| P6   | Score ≥ 8 → count++        | `8.1`, `9.0`              |
+Các path chính của hàm calculateValidAverage: 
+| Path | Mô tả                     | Test                          |
+| ---- | ------------------------- | ----------------------------- |
+| P1   | List null                 | `testNullList`                |
+| P2   | List rỗng                 | `testEmptyList`               |
+| P3   | List có điểm hợp lệ       | NormalList                    |
+| P4   | List không có điểm hợp lệ | `testNoValidScoresForAverage` |
+
+Path coverage 100% tuyệt đối là bất khả thi (do vòng lặp) → đã đạt path coverage thực tế (practical path coverage).
 
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
