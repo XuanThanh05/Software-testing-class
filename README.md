@@ -38,7 +38,7 @@ unit_test/
 Vào đúng thư mục ...\Software-testing-class\unit_test> trong terminal nhập: mvn test
 #### 6. Các phương pháp kiểm thử hộp đen
 ##### 6.1 LỚP TƯƠNG ĐƯƠNG
-`
+```
 Các lớp tương đương cần có
 -) Với danh sách
 L1	null	
@@ -49,7 +49,7 @@ V1	0 ≤ score ≤ 10	✅
 V2	score < 0	✅
 V3	score > 10	✅
 V4	score == null	✅
-`
+```
 ##### 6.2 KIỂM TRA BIÊN 
 -) Các biên quan trọng
 ```
@@ -104,11 +104,11 @@ Với calculateValidAverage:
 | `scores.isEmpty()` | ✅   | ❌   | ❌       |
 | `count == 0`       | ✅   | ✅   | Đủ       |
 
-`
+```
 📌 Thiếu nhẹ: chưa có test list không rỗng nhưng không null để đi nhánh scores.isEmpty() == false
 👉 Nhưng trên thực tế test NormalList đã cover nhánh này
 ➡️ Branch coverage vẫn đạt
-`
+```
 ##### 7.3 Đánh giá theo Cyclomatic Complexity
 -) Công thức
 M = số quyết định + 1
@@ -119,10 +119,10 @@ if score == null → 1
 if score < 0 || score > 10 → 1
 if score >= 8 → 1
 ```
-`
+```
 👉 M = 5
 ➡️ Cần ít nhất 5 test case độc lập, hiện tại: > 5 test → đạt.
-`
+```
 ##### 7.4 Kiểm thử hộp trắng theo Path Coverage
 Các path chính của hàm countExcellentStudents:
 | Path | Mô tả                      | Test                      |
@@ -146,14 +146,14 @@ Path coverage 100% tuyệt đối là bất khả thi (do vòng lặp) → đã 
 #### 8. Các lỗi khác
 ##### 8.1 Không giới hạn số phần tử của List. ❌
 ##### 8.2 Nhóm lỗi về kiểu dữ liệu Double. ❌
-`
+```
 -) Không xử lý NaN (Not a Number)
 Gợi ý: Nếu là Nan thì tiếp tục
 if (score.isNaN()) continue;
 -) Không xử lý Infinity / -Infinity
 Gợi ý: Nếu Infinity thì tiếp tục
 if (score.isInfinite()) continue;
-`
+```
 ##### 8.3 Không kiểm tra giá trị "phi thực tế" ❌
 Ví dụ:
 ```
