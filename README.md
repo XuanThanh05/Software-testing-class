@@ -38,6 +38,7 @@ unit_test/
 Vào đúng thư mục ...\Software-testing-class\unit_test> trong terminal nhập: mvn test
 #### 6. Các phương pháp kiểm thử hộp đen
 ##### 6.1 LỚP TƯƠNG ĐƯƠNG
+`
 Các lớp tương đương cần có
 -) Với danh sách
 L1	null	
@@ -48,7 +49,7 @@ V1	0 ≤ score ≤ 10	✅
 V2	score < 0	✅
 V3	score > 10	✅
 V4	score == null	✅
-
+`
 ##### 6.2 KIỂM TRA BIÊN 
 -) Các biên quan trọng
 ```
@@ -141,6 +142,27 @@ Các path chính của hàm calculateValidAverage:
 | P4   | List không có điểm hợp lệ | `testNoValidScoresForAverage` |
 
 Path coverage 100% tuyệt đối là bất khả thi (do vòng lặp) → đã đạt path coverage thực tế (practical path coverage).
+
+#### 8. Các lỗi khác
+##### 8.1 Không giới hạn số phần tử của List. ❌
+##### 8.2 Nhóm lỗi về kiểu dữ liệu Double. ❌
+`
+-) Không xử lý NaN (Not a Number)
+Gợi ý: Nếu là Nan thì tiếp tục
+if (score.isNaN()) continue;
+-) Không xử lý Infinity / -Infinity
+Gợi ý: Nếu Infinity thì tiếp tục
+if (score.isInfinite()) continue;
+`
+##### 8.3 Không kiểm tra giá trị "phi thực tế" ❌
+Ví dụ:
+```
+score = 9.99999999999999
+```
+Gợi ý: Làm tròn trước khi xử lýs: 
+```
+core = Math.round(score * 10) / 10.0;
+```
 
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
