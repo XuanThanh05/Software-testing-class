@@ -36,6 +36,38 @@ unit_test/
 
 #### 5. Cách chạy kiểm thử đơn vị
 Vào đúng thư mục ...\Software-testing-class\unit_test> trong terminal nhập: mvn test
+#### 6. Các phương pháp kiểm thử
+##### 6.1 LỚP TƯƠNG ĐƯƠNG
+Các lớp tương đương cần có
+-) Với danh sách
+L1	null	
+L2	rỗng	
+L3	có phần tử	
+-) Với giá trị điểm
+V1	0 ≤ score ≤ 10	✅
+V2	score < 0	✅
+V3	score > 10	✅
+V4	score == null	✅
+
+##### 6.2 KIỂM TRA BIÊN 
+-) Các biên quan trọng
+Biên miền hợp lệ: 0.0, 10.0
+Biên phân loại xuất sắc: 8.0
+
+-) Biên	:
+0.0	✅
+10.0	✅
+8.0 (tại biên)	✅
+sát biên dưới 8.0	✅ (7.9)
+sát biên trên 8.0	✅ (8.1)
+
+##### 6.3 BẢNG QUYẾT ĐỊNH
+Các rule quan trọng cho calculateValidAverage
+Rule||	Điều kiện||	Kết quả
+R1||	list null||	return 0
+R2||	list rỗng||	return 0
+R3||	có ≥1 điểm hợp lệ||	tính trung bình
+R4||	không có điểm hợp lệ||	return 0
 
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
