@@ -51,24 +51,29 @@ V4	score == null	✅
 
 ##### 6.2 KIỂM TRA BIÊN 
 -) Các biên quan trọng
+```
 Biên miền hợp lệ: 0.0, 10.0
 Biên phân loại xuất sắc: 8.0
-
+```
 -) Biên	:
+```
 0.0	✅
 10.0	✅
 8.0 (tại biên)	✅
 sát biên dưới 8.0	✅ (7.9)
 sát biên trên 8.0	✅ (8.1)
-
+```
 ##### 6.3 BẢNG QUYẾT ĐỊNH
-Các rule quan trọng cho calculateValidAverage
-Rule||	Điều kiện||	Kết quả
-R1||	list null||	return 0
-R2||	list rỗng||	return 0
-R3||	có ≥1 điểm hợp lệ||	tính trung bình
-R4||	không có điểm hợp lệ||	return 0
-
+```
+R1 (null list)	✅	Đã có
+R2 (empty list)	✅	Đã có
+R3 (null score)	✅	Đã có
+R4 (<0)	✅	Đã có
+R5 (0–8)	✅	Đã có
+R6 (8–10)	✅	Đã có
+R7 (>10)	✅	Đã có
+R8 (không điểm hợp lệ)	✅	Đã có
+```
 ## CHƯƠNG 3: Bài tập thực hành kiểm thử tự động End-to-End với Cypress
 #### 1. Mục tiêu
 
